@@ -1,0 +1,27 @@
+function checkSentence(sentence) {
+    length := 0
+    words := 1
+    vowels := 0
+
+    for i := 0 to sentence.length - 1 do
+        char := sentence[i]
+        length := length + 1
+
+        if isVowel(char) then
+            vowels := vowels + 1
+        end if
+
+        if char === ' ' then
+            words := words + 1
+        end if
+    end for
+
+    return {length, words, vowels}
+}
+
+function isVowel(char) {
+    vowels := ['a', 'e', 'i', 'o', 'u']
+    return vowels.contains(char.toLowerCase())
+}
+
+print(checkSentence("This is a test sentence for algorithm."))
